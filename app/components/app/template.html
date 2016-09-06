@@ -1,0 +1,29 @@
+<div id="pagewrap">
+	<header id="header">
+		<hgroup>
+			<h1 id="site-logo"><a [routerLink]="['/']">Vitalii Rakytin</a></h1>
+			<h2 id="site-description">about me and my work</h2>
+		</hgroup>
+		<nav>
+			<ul id="main-nav" class="clearfix">
+				<li *ngFor="let item of menu">
+					<a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="item.link">{{item.title}}</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div id="content">
+		<article ng-view class="post clearfix">
+			<router-outlet></router-outlet>
+		</article>
+	</div>
+	<aside id="sidebar">
+		<section class="widget">
+			<a href="mailto:vetalrakitin@gmail.com" target="_blank"><img src="/image/gmail.png" /> </a>
+			<a href="skype:vetalrakitin" target="_blank"><img src="/image/skype.png" /> </a>
+		</section>
+	</aside>
+	<footer id="footer">
+		<p>Vitalii Rakytin</p>
+	</footer>
+</div>
