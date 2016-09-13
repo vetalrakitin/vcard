@@ -3,7 +3,8 @@
   "description": "The loto game",
   "private": true,
   "scripts": {
-    "start": "live-server --entry-file=index.html"
+    "start": "live-server --entry-file=index.html",
+    "webpack-dev-server": "webpack-dev-server --colors --display-error-details --port 8086"
   },
   "dependencies": {
     "@angular/common": "2.0.0-rc.5",
