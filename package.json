@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "live-server --entry-file=index.html",
-    "webpack-dev-server": "webpack-dev-server --colors --display-error-details --port 8086"
+    "webpack-dev-server": "webpack-dev-server --colors --display-error-details --port 8086",
+    "dist": "webpack && live-server ./dist --entry-file=index.html"
   },
   "dependencies": {
     "@angular/common": "2.0.0-rc.5",

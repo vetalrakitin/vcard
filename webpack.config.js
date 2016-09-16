@@ -6,14 +6,14 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     'main'  : './app/main.ts',
-    'vendor': './app/vendor.ts'
+    //'vendor': './app/vendor.ts'
   },
   output: {
     path    : './dist',
     filename: 'bundle.js'
   },
   plugins: [
-    new CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    //new CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new CopyWebpackPlugin(
       [{from: './app/', to: 'app/'}]
       , {

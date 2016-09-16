@@ -1,6 +1,7 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import 'reflect-metadata/Reflect.js';
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppComponent }  from './components/app/component';
 import {HomeComponent} from "./components/home/component";
 import {AboutComponent} from "./components/about/component";
@@ -14,10 +15,11 @@ import {
   FEEDBACK_URL_BASE
 } from './services/feedback.ts';
 
+
 @NgModule({
     imports:      [ BrowserModule, routing, FormsModule ],
     declarations: [ AppComponent, HomeComponent, AboutComponent, ContactsComponent, FeedbackComponent],
-    providers:[{provide: LocationStrategy, useClass: PathLocationStrategy}, HTTP_PROVIDERS, {provide: FEEDBACK_URL_BASE, useValue: '/json/feedback'},],
+    providers:[{provide: LocationStrategy, useClass: PathLocationStrategy}, HTTP_PROVIDERS],
     bootstrap:    [ AppComponent ]
 })
 class AppModule { }

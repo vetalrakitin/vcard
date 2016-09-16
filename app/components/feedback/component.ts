@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {FeedbackService, FeedbackResult} from '../../services/feedback.ts';
-import from 'rxjs/Rx';
+import 'rxjs/Rx';
 
 @Component({
     selector: 'feedback',
@@ -23,7 +23,7 @@ export class FeedbackComponent {
   	onSubmit() { 
   		this.feedbackService.saveFeedback(this.model)
             .subscribe(
-               (feedback: FeedbackResult) => this.feedback = feedback,
+               res => console.error(res),
             	error => console.error(error),
             	() => console.log('Response is retrieved')
             );

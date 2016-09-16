@@ -6,16 +6,15 @@ import {Component} from '@angular/core';
     styleUrls: ['app/components/app/style.css']
 })
 export class AppComponent {
-	menu: [];
-
+	menu: []
 	constructor ()
 	{
 		this.menu = [
-		{title: 'Home', link: '/'},
-		{title: 'About', link: '/about/'},
-		{title: 'Projects', link: '/projects/'},
-		{title: 'Feedback', link: '/feedback/'},
-		{title: 'Contacts', link: '/contacts/'},
-	];
+			{title: 'Home', link: '/'},
+			{title: 'About', link: '/about/'},
+			{title: 'Projects', link: '/projects/'},
+			{title: 'Feedback', link: '/feedback/'},
+			{title: 'Contacts', link: '/contacts/'},
+		];
 	}
 }

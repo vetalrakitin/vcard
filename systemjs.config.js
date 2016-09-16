@@ -3,7 +3,8 @@ System.config({
   typescriptOptions: {emitDecoratorMetadata: true},
   map: {
     '@angular': 'node_modules/@angular',
-    'rxjs': 'node_modules/rxjs'
+    'rxjs': 'node_modules/rxjs',
+    'reflect-metadata': 'node_modules/reflect-metadata'
   },
   baseURL: "/",
   paths: {

@@ -1,11 +1,11 @@
-import {Inject, Injectable, OpaqueToken} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 
-export const FEEDBACK_URL_BASE = new OpaqueToken('FeedbackUrlBase');
+
 
 export interface FeedbackResult 
 {
@@ -16,17 +16,18 @@ export interface FeedbackResult
 export class FeedbackService {
   res: FeedbackResult;
   constructor(
-      private http: Http,
-      @Inject(FEEDBACK_URL_BASE) private urlBase: string
-      ){}
+      private http: Http
+      ){
 
-  saveFeedback(model): Observable<FeedbackResult> {
+  }
+
+  saveFeedback(model): Observable {
     let body = JSON.stringify( model);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http
-        .post(this.urlBase, body, options)
-        .share();
+        .post("/json/feedback", body, options);
+        
   }
 
   private _hasResult(data): boolean {
